@@ -9,7 +9,7 @@ function checkPalindrome(param) {
 }
 
 function simplifiedCheckPalindrome(param) {
-  for(let i = 0; i < param.length; i++) {
+  for(let i = 0; i < param.length / 2; i++) {
     if(param.charAt(i) != param.charAt((param.length - 1) - i)) {
       return false;
     }
