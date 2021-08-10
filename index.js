@@ -18,10 +18,33 @@ function simplifiedCheckPalindrome(param) {
   }
 }
 
-//checkPalindrome('madam'); // will return 'true'
-//checkPalindrome('b'); // will return 'true'
-//checkPalindrome('brown'); // will return 'false'
+function isPalindromeRecursive(param, index) {
+  if(index < param.length / 2) {
+    let firstIndex = index;
+    let lastIndex = (param.length - index) - 1;
 
-simplifiedCheckPalindrome('madam');
-simplifiedCheckPalindrome('b');
-simplifiedCheckPalindrome('brown');
+    if(param.charAt(firstIndex) != param.charAt(lastIndex)) {
+      return false;
+    } else {
+      return isPalindromeRecursive(param, index + 1);
+    }
+  } else {
+    return true;
+  }
+}
+
+function checkPalindromeRecursiveMethod(param) {
+  return isPalindromeRecursive(param, 0);
+}
+
+checkPalindrome('madam'); // will return 'true'
+checkPalindrome('b'); // will return 'true'
+checkPalindrome('brown'); // will return 'false'
+
+simplifiedCheckPalindrome('madam'); // will return 'true'
+simplifiedCheckPalindrome('b'); // will return 'true'
+simplifiedCheckPalindrome('brown'); // will return 'false'
+
+checkPalindromeRecursiveMethod('madam'); // will return 'true'
+checkPalindromeRecursiveMethod('b'); // will return 'true'
+checkPalindromeRecursiveMethod('brown'); // will return 'false'
